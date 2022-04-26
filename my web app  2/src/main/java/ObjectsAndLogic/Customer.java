@@ -9,23 +9,29 @@ public class Customer  extends User{
 
     private boolean isMember;
     private Car     car;
-    private double  remainingAmount;
-    private ArrayList<Order> historyOrder; //auto-generate List during the constructor build
-
-
+    private double  balance;
+    private ArrayList<Orders> historyOrder; //auto-generate List during the constructor build
 
     public Customer(String name, int age, String account, String password, Car car) {
         super(name, age, account, password);
         this.car = car;  //only car generate......
-        this.remainingAmount =0;
-        historyOrder=new ArrayList<Order>();
+        this.balance =0;
+        historyOrder=new ArrayList<Orders>();
     }
 
     public Customer(String name, int age, String account, String password, double longitude, double latitude, Car car) {
         super(name, age, account, password, longitude, latitude);
         this.car = car;
-        this.remainingAmount = remainingAmount;
-        historyOrder=new ArrayList<Order>();
+        this.balance = balance;
+        historyOrder=new ArrayList<Orders>();
+    }
+
+    // new new new new new new new new new new new new new new new new new new new new new new new new new new
+    public Customer(String account, String name, int age, String password, boolean isMember, double longitude, double latitude, int balance) {
+        super(name, age, account, password, longitude, latitude);
+        this.isMember = isMember;
+        this.balance = balance;
+        historyOrder=new ArrayList<Orders>();
     }
 
     public boolean getIsMember(){
@@ -36,12 +42,12 @@ public class Customer  extends User{
         return this.car;
     }
 
-    public ArrayList<Order> getHistoryOrder(){
+    public ArrayList<Orders> getHistoryOrder(){
         return this.historyOrder;
     }
 
     public double getRemainingAmount(){
-        return this.remainingAmount;
+        return this.balance;
     }
 
     public void setMember(boolean authority){
@@ -52,12 +58,12 @@ public class Customer  extends User{
         this.car=car;
     }
 
-    public void setHistoryOrder(ArrayList<Order> historyOrder){
+    public void setHistoryOrder(ArrayList<Orders> historyOrder){
         this.historyOrder=historyOrder;
     }
 
-    public void setRemainingAmount(double remainingAmount){
-        this.remainingAmount=remainingAmount;
+    public void setRemainingAmount(double balance){
+        this.balance=balance;
     }
 
     public void orderService(){
@@ -74,6 +80,12 @@ public class Customer  extends User{
 
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "isMember=" + isMember +
+                " name: " + super.getName();
+    }
 }
 
 

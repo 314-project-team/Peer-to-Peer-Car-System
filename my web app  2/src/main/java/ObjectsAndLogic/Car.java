@@ -1,4 +1,7 @@
 package ObjectsAndLogic;
+
+import java.io.IOException;
+
 /*
  *  NAME: YI WEI TAO
  *  Task: User, Admin, Customer,Assistant
@@ -6,61 +9,73 @@ package ObjectsAndLogic;
  */
 public class Car {
 
-    private String    rego;
-    private String    color;
-    private String    brand;
-    private CarStatus status;
+    private String Rego;
+    private String Color;
+    private String Brand;
+    private CarStatus Status;
+    private String Describe;
+    private String Account;
 
-    private String  describe;
-
-    public Car(String rego, String color,String  brand) {
-        this.rego = rego;
-        this.color= color;
-        this.brand=brand;
-        this.status=CarStatus.Fine;
+    public Car(String Rego, String Color, String Brand) {
+        this.Rego = Rego;
+        this.Color = Color;
+        this.Brand = Brand;
     }
 
+    public Car(String Rego, String Color, String Brand, String describe, String status,String Account) throws IOException {
+        this.Rego = Rego;
+        this.Color = Color;
+        this.Brand = Brand;
+        this.Status = CarStatus.Fine;
+        this.Describe = describe;
+        this.Account = Account;
 
+        MyBatisDemo myBatisDemo = new MyBatisDemo();
+        myBatisDemo.addCar("", "asd", "df", "fgh", "vbn", "11111");
+
+    }
 
     public String getRego() {
-        return rego;
+        return Rego;
     }
 
     public void setRego(String rego) {
-        this.rego = rego;
+        this.Rego = rego;
     }
 
     public String getColor() {
-        return color;
+        return Color;
     }
 
     public void setColor(String color) {
-        this.color = color;
+        this.Color = color;
     }
 
     public String getBrand() {
-        return brand;
+        return Brand;
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        this.Brand = brand;
     }
 
     public CarStatus getStatus() {
-        return status;
+        return Status;
     }
 
     public void setStatus(CarStatus status) {
-        this.status = status;
+        this.Status = status;
     }
 
     public String getDescribe() {
-        return describe;
+        return Describe;
     }
 
     public void setDescribe(String describe) {
-        this.describe = describe;
+        this.Describe = describe;
     }
+
+
 }
 
 

@@ -14,9 +14,9 @@ public class OrderProcess {
     }
 
     //顾客产生订单
-    public Order doProcess(Customer customer){
+    public Orders doProcess(Customer customer){
 
-        return new Order("my order");
+        return new Orders("my order","a",1,"","");
     }
 
     //生成order id
@@ -46,4 +46,6 @@ public class OrderProcess {
     public void addHistoryOrder(Customer customer, Assistant assistant){
 
     }
+
+
 }

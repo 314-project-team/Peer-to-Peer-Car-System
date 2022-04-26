@@ -32,21 +32,7 @@ public class UserLogin extends HttpServlet {
 
         SqlSession session = MyBatisUtil.getSession();
         UserMapper mapper = session.getMapper(UserMapper.class);
-        String userPassword = mapper.selectPasswordByAccount(account);
 
-        if (userPassword == null) {
-
-            response.getWriter().write("the user name dose not exit");
-
-        }else if (!userPassword.equals(password)) {
-
-            response.getWriter().write("the password is wrong");
-
-        } else {
-
-            response.getWriter().write("login success");
-            System.out.println("the user: "+account+" has been login");
-        }
 
     }
 
