@@ -6,23 +6,84 @@
 
 <mapper namespace="mapper.UserMapper">
 
-    <select id="selectAll" resultType="ObjectsAndLogic.User">
+    <select id="selectPassAssistant" resultType="ObjectsAndLogic.Assistant">
         select *
-        from tb_user;
+        from Assistant
+        where AS_IsPass = false;
     </select>
 
-    <select id="selectById" resultType="ObjectsAndLogic.User">
-
+    <select id="selectIdleAssistant" resultType="ObjectsAndLogic.Assistant">
         select *
-        from tb_user
-        where id = #{id};
-    </select>
-    <select id="selectPasswordByAccount" resultType="String">
-
-
-        select password
-        from tb_user
-        where account = #{account}
+        from Assistant
+        where AS_IsIdle = true;
     </select>
 
+    <insert id="addCustomer">
+        insert into Customer (CU_Account, CU_Name, CU_Age, CU_Password, CU_IsMember, CU_Longitude, CU_Latitude,
+                              CU_Balance)
+            value (#{account},#{Name},#{Age},#{Password},#{IsMember},#{Longitude},#{Latitude},#{Balance})
+
+    </insert>
+
+    <insert id="addCar">
+        insert into Car (C_Rego, C_Color, C_Brand, C_Describe, C_Status, CU_Account)
+            value (#{rego},#{color},#{brand},#{describe},#{status},#{account})
+
+    </insert>
+
+    <insert id="addAssistant" >
+        insert into Customer (AS_Account, AS_Name, AS_Age, AS_Password, AS_IsPass, AS_IsIdle, AS_Longitude, AS_Latitude,
+                              AS_Balance)
+            value (#{AS_Account},#{Name},#{Age},#{Password},#{IsPass},#{IsIdle},#{Longitude},#{Latitude},#{Balance})
+
+    </insert>
+
+    <insert id="addAdmin">
+        insert into Customer (AD_Account, AD_Name, AD_Age, AD_Password, AS_Account)
+            value (#{AD_Account},#{Name},#{Age},#{Password},#{AS_Account})
+
+    </insert>
+
+    <insert id="addOrders">
+        insert into Customer (O_OrderID, O_Describe, O_Price, CU_Account, AS_Account)
+            value (#{OrderID},#{Describe},#{Price},#{CU_Account},#{AS_Account})
+
+    </insert>
+
+    <update id="updateAssistantBalance">
+        update Assistant
+        SET AS_Balance = #{Balance}
+        WHERE AS_Account = #{AS_Account};
+    </update>
+
+    <update id="updateCustomerBalance">
+        update Customer
+        SET CU_Balance = #{Balance}
+        WHERE CU_Account = #{CU_Account};
+    </update>
+
+    <update id="updateAssistantPassCondition">
+        UPDATE Assistant
+        SET AS_IsPass = true
+        WHERE AS_Account = #{AS_Account};
+    </update>
+
+    <delete id="deleteAssistant">
+        delete
+        from Assistant
+        where AS_Account = #{AS_Account}
+
+    </delete>
+
+    <delete id="deleteAdmin">
+        delete
+        from Admin
+        where AD_Account = #{AD_Account}
+
+    </delete>
+
+    <select id="selectOrders" resultType="ObjectsAndLogic.Orders">
+        select *
+        from Orders;
+    </select>
 </mapper>

@@ -1,4 +1,5 @@
 package ObjectsAndLogic;
+
 /*
  *  NAME: YI WEI TAO
  *  Task: User, Admin, Customer,Assistant
@@ -6,24 +7,43 @@ package ObjectsAndLogic;
  */
 public class Car {
 
-    private String    rego;
-    private String    color;
-    private String    brand;
-    private CarStatus status;
+    private String rego;
+    private String color;
+    private String brand;
+    private String status;
+    private String describe;
+    private String account;
 
-    private String  describe;
-
-    public Car(String rego, String color,String  brand) {
+    public Car(String rego, String color, String brand, String describe, String status,String account) {
         this.rego = rego;
-        this.color= color;
-        this.brand=brand;
-        this.status=CarStatus.Fine;
+        this.color = color;
+        this.brand = brand;
+        this.status=status;
+        this.describe = describe;
+        this.account = account;
+
     }
 
 
+    public Car(Car car) {
+        this.rego = car.rego;
+        this.color= car.color;
+        this.brand= car.brand;
+        this.status=car.status;
+        this.describe=car.describe;
+        this.account = car.account;
+    }
 
     public String getRego() {
         return rego;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public void setRego(String rego) {
@@ -46,11 +66,11 @@ public class Car {
         this.brand = brand;
     }
 
-    public CarStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(CarStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -61,6 +81,8 @@ public class Car {
     public void setDescribe(String describe) {
         this.describe = describe;
     }
+
+
 }
 
 

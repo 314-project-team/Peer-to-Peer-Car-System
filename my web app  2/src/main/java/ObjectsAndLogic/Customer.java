@@ -4,29 +4,30 @@ package ObjectsAndLogic;
  *  Task: User, Admin, Customer,Assistant
  *
  */
+
+
 import java.util.ArrayList;
 public class Customer  extends User{
 
     private boolean isMember;
     private Car     car;
-    private double  remainingAmount;
-    private ArrayList<Order> historyOrder; //auto-generate List during the constructor build
-
-
+    private double  balance;
+    private ArrayList<Orders> historyOrder; //auto-generate List during the constructor build
 
     public Customer(String name, int age, String account, String password, Car car) {
         super(name, age, account, password);
         this.car = car;  //only car generate......
-        this.remainingAmount =0;
-        historyOrder=new ArrayList<Order>();
+        this.balance =0;
+        historyOrder=new ArrayList<Orders>();
     }
 
     public Customer(String name, int age, String account, String password, double longitude, double latitude, Car car) {
         super(name, age, account, password, longitude, latitude);
         this.car = car;
-        this.remainingAmount = remainingAmount;
-        historyOrder=new ArrayList<Order>();
+        this.balance = balance;
+        historyOrder=new ArrayList<Orders>();
     }
+
 
     public boolean getIsMember(){
         return this.isMember;
@@ -36,12 +37,12 @@ public class Customer  extends User{
         return this.car;
     }
 
-    public ArrayList<Order> getHistoryOrder(){
+    public ArrayList<Orders> getHistoryOrder(){
         return this.historyOrder;
     }
 
-    public double getRemainingAmount(){
-        return this.remainingAmount;
+    public double getBalance(){
+        return this.balance;
     }
 
     public void setMember(boolean authority){
@@ -52,21 +53,28 @@ public class Customer  extends User{
         this.car=car;
     }
 
-    public void setHistoryOrder(ArrayList<Order> historyOrder){
+    public void setHistoryOrder(ArrayList<Orders> historyOrder){
         this.historyOrder=historyOrder;
     }
 
-    public void setRemainingAmount(double remainingAmount){
-        this.remainingAmount=remainingAmount;
+    public void setBalance(double balance){
+        this.balance=balance;
     }
 
-    public void orderService(){
+    public Orders orderService(){
         /*need Order Process Class
          * create a order Object
          *
          *
          */
-        car.setStatus(CarStatus.Broken);
+        String cAccount = getAccount();
+        String aAccount = "null";
+        Car myCar = new Car(car.getRego(),car.getColor(),car.getBrand(),car.getStatus(),car.getDescribe(),car.getAccount());
+        double price = 0;
+        String describe = "null";
+        Orders o = new Orders(cAccount,aAccount,myCar,price,describe);
+        return o;
+
     }
 
     public void changeCarInformation(){
@@ -74,6 +82,16 @@ public class Customer  extends User{
 
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "isMember=" + isMember +
+                " name: " + super.getName();
+    }
+
+    public void addHistoryOrder(Orders order){
+        historyOrder.add(order);
+    }
 }
 
 
