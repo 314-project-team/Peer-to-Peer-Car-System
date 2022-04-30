@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Haichen Qin">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCars</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/browse.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function confirm(){
+            window.location.href="carpage.html"
+        }
+        function notification(){
+            window.location.href="notification.html"
+        }
+        function cart(){
+            window.location.href="cart.html"
+        }
+        function user(){
+            window.location.href="avatar.html"
+        }
+
+        // retrieve data
+
+        $(
+            function (){
+                $.ajax({
+                    url: "https://private-anon-12cb851c4c-carsapi1.apiary-mock.com/manufacturers",
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data){
+                        htm = "";
+                        $.each(data,function(i,n){
+                            htm =+ "<option value='" + n["name"] + "'>" + n["name"] + "</option>"
+                        })
+                        $("#brand").append(htm);
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown){
+                        console.log(errorThrown);
+                    }
+                })
+            }
+        )
+    
+    </script>
+</head>
+<body id="body">
+
+    <!-- header -->
+    <div id="header">
+        <div id="headerLeft">
+            <ul>
+                <li id="title">ReCars</li>
+                <li class="separator">|</li>
+                <li>EN</li>
+            </ul>
+        </div>
+        <div id="headerCenter">
+            <ul>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="shipping.html">Shipping</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </div>
+        <div id="headerRight">
+            <ul>
+                <li class="separator">|</li>
+                <li><img id="notification" src="src/notification.png" onclick="notification()"></li>
+                <li class="separator">|</li>
+                <li><img id="cart" src="src/cart.png" onclick="cart()"></li>
+                <li class="separator">|</li>
+                <li><img id="user" src="src/user.png" onclick="user()"></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- browse content -->
+    <div id="banner">
+        <img src="src/banner.png" alt="">
+        <pre id="bannerTitle">
+            Get ReCars Right Now
+            balabalabala
+        </pre>
+        <div id="carType">
+            <select name="location" class="dropdown-select">
+                <optgroup label='Location'></optgroup>
+            </select>
+            <select name="mile" class="dropdown-select">
+                <optgroup label='Mile'></optgroup>
+            </select>
+            <select name="brand" id="brand" class="dropdown-select">
+                <optgroup label='Brand'></optgroup>
+
+            </select>
+            <button type="submit" id="typeConfirm" class="confirm">Confirm</button>
+        </div>
+    </div>
+
+    <!-- vehicle condition -->
+    <div id="condition">
+        <p>Vehicle condition</p>
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" id="condition1" value="Damaged car bumper">
+                    <label for="condition1"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition2" value="Damaged car bumper">
+                    <label for="condition2"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition3" value="Damaged car bumper">
+                    <label for="condition3"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition4" value="Damaged car bumper">
+                    <label for="condition4"> Damaged car bumper</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="condition5" value="Damaged car bumper">
+                    <label for="condition5"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition6" value="Damaged car bumper">
+                    <label for="condition6"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition7" value="Damaged car bumper">
+                    <label for="condition7"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition8" value="Damaged car bumper">
+                    <label for="condition8"> Damaged car bumper</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="condition9" value="Damaged car bumper">
+                    <label for="condition9"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition10" value="Damaged car bumper">
+                    <label for="condition10"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition11" value="Damaged car bumper">
+                    <label for="condition11"> Damaged car bumper</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="condition12" value="Damaged car bumper">
+                    <label for="condition12"> Damaged car bumper</label>
+                </td>
+            </tr>
+        </table>
+        <textarea placeholder="Please enter vehicle damage..."></textarea>
+        <br>
+        <button type="submit" id="conditionConfirm" class="confirm" onclick="confirm()">Confirm</button>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+        <table>
+            <tr>
+               <th>Company</th> 
+               <th>Support</th>
+               <th>Links</th>
+               <th>Location</th>
+               <th>Connect</th>
+            </tr>
+            <tr>
+                <td>
+                    <a>About</a>
+                </td>
+                <td>
+                    <a>Community</a>
+                </td>
+                <td>
+                    <a>Help & Support</a>
+                </td>
+                <td>
+                    <a>228 Jakubowski Cliffs</a>
+                </td>
+                <td>
+                    <a>info@recars.com</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>How it works</a>
+                </td>
+                <td>
+                    <a>Livechat</a>
+                </td>
+                <td>
+                    <a>Terms & Privacy</a>
+                </td>
+                <td>
+                    <a>USA, New York</a>
+                </td>
+                <td>
+                    <a>(928) 344-1480</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>Cooperation</a>
+                </td>
+                <td>
+                    <a>FAQ</a>
+                </td>
+                <td>
+                    <a>Cookies</a>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <div id="watermark">
+            <p id="watermarkLeft" class="watermark">ReCars</p>
+            <p id="watermarkRight" class="watermark">© 2022 ReCars LTD. All Rights Reserved</p>
+        </div>
+        
+    </div>
+</body>
+</html>

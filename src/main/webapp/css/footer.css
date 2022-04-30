@@ -1,0 +1,60 @@
+/* author: Haichen Qin */
+
+#footer{
+    width: 1890px;
+    height: 400px;
+    background: rgb(123,141,158);
+    background: linear-gradient(180deg, rgba(123,141,158,1) 0%, rgba(82,94,105,1) 100%);
+}
+
+#footer table{
+    position: relative;
+    top: 40px;
+    margin: auto;
+    text-align: left;
+    border-spacing: 60px 20px;
+    font-size: 20px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+#footer table th{
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+#footer table td{
+    color: rgb(177, 177, 177);
+}
+
+#footer hr{
+    border: none;
+    position: relative;
+    top: 100px;
+    height: 1px;
+    width: 60%;
+    background-color: rgb(177, 177, 177);
+}
+
+#watermark{
+    position: relative;
+    top: 100px;
+    width: 1100px;
+    height: auto;
+    margin: auto;
+}
+
+.watermark{
+    color: white;
+}
+
+#watermarkLeft{
+    position: relative;
+    top: -25px;
+    float: left;
+    font-size: 30px;
+}
+
+#watermarkRight{
+    position: relative;
+    float: right;
+}

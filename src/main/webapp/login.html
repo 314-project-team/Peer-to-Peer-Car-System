@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>asdasdasd</title>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        $(
+            function () {
+
+                $("#login").on("click", function () {
+
+                    var account = $("#account").val()
+                    var password = $("#password").val()
+
+                    $.ajax({
+                        url: "xxxx", // 请求路径
+                        type: "POST", //请求方式
+                        //data: "username=jack&age=23",//请求参数
+                        data: {"userAccount": account, "password": password},
+                        success: function (data) {
+
+
+
+                            alert(data);
+                        },//响应成功后的回调函数
+                        error: function () {
+                            alert("出错啦...")
+                        },//表示如果请求响应出现错误，会执行的回调函数
+
+                        dataType: "text"//设置接受到的响应数据的格式
+                    });
+
+                })
+
+
+            }
+        )
+
+    </script>
+</head>
+<body>
+
+<h1>CSIT314</h1>
+<h2>Welcome To Login</h2>
+<label>Account: </label><br>
+<input type="text" id="account"><br>
+<label>Password:</label><br>
+<input type="text" id="password">
+
+<button id="login"> login</button>
+
+</body>
+</html>

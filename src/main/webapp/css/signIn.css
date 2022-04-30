@@ -1,0 +1,137 @@
+/*通用类*/
+*{
+	margin:0;
+	padding:0;	
+}
+body{		
+	min-width:1400px;
+	margin:0 auto;
+	font-size:14px;	
+	background:#F5F6F8;
+	text-align:justify;	
+	color:#000;
+}
+h1,h2,h3{	
+	font-weight:500;	
+}
+img{
+	border:none;	
+}
+a{
+	cursor:pointer;
+	color:#000;
+	text-decoration:none;	
+	outline:none;
+}
+a:hover{
+	color:#f60;	
+}
+ul{
+	list-style-type:none;	
+}
+em{
+	font-style:normal;	
+}
+.lt{
+	float:left;	
+}
+.rt{
+	float:right;	
+}
+
+select {
+	 appearance:none; 
+    -moz-appearance:none; 
+    -webkit-appearance:none;
+}
+
+
+div.clear{
+	font: 0px Arial; line-height:0;
+	height:0; 
+	overflow:hidden;	
+	clear:both;	
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+
+/*公用CSS 开始*/
+.main{width: 1200px; margin: 0 auto; background-color: #FFF}
+.head1{width: 1000PX; margin: 0 auto; height: 100px; border-bottom: 1px solid #515151;}
+.head1 .left{width: 50%;float: left;}
+.head1 .left h3{font-size: 24px; color: #000000; line-height: 100px;}
+
+.head1 .rithg{width: 50%;float: right;}
+.head1 .rithg span{color: #BCC4CF;font-size: 18px;display: block; text-align: right; line-height: 100px;}
+
+.centen1{width: 1000px; margin: 0 auto;  padding-top: 40px; text-align: center; border-bottom: 1px solid #515151;}
+.centen1 h3{font-size: 26px; color: #000000; margin: 20px 0;}
+.centen1 p{font-size: 18px; color: #9DA3AA; margin: 30px 0;}
+.centen1 img{width: 250px; height: 190px;}
+.centen1 input{width: 50%;height: 50px; margin: 40px 0; background-color: #249AF3; color: #FFFFFF; font-size: 20px; border-radius: 5px;}
+
+.centen1 span{font-size: 17px; color: #8493A7; padding-bottom: 30px; display: block;}
+.centen1 a{color: #249AF3;}
+
+.centen1 .pp{font-size: 18px; color: #9DA3AA; margin: 50px 0;}
+.centen1 .qw1{margin: 70px 0;}
+
+.foter1{ background-color: #FFFFFF;}
+.foter1 img{width: 100%;display: block; height: 130px;object-fit: cover;}
+
+
+
+.er{}
+.box{width: 1200px; margin: 0 auto;}
+.er1 .left{background: url(../src/b1.jpg); height: 800px; width: 50%;float: left;}
+
+.er1 .left h3{font-size: 26px; color: #FFFFFF; padding-top: 20px; padding-left: 20px;}
+.er1 .left .xia {padding: 0 50px; margin-top: 500px;}
+.er1 .left .xia span{font-size: 22px; color: #FFFFFF; display: block; margin-bottom: 30px;}
+.er1 .left .xia p{font-size: 14px; color: #A8ABAD;}
+
+
+.er1 .rithg{width: 50%; float: right; height: 800px; background-color: #FFFFFF;}
+
+.er1 .rithg .we {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.er1 .rithg .we h3{text-align: center;font-size: 25px; color: #000000;}
+.er1 .rithg .we p{font-size: 16px; color: #8494A8;text-align: center; margin-top: 30px;}
+
+.er1 .rithg .shur{width: 70%; margin: 0 auto; margin-top: 30px;}
+.er1 .rithg .shur span{color: #8493A7;font-size: 20px; display: inline-block;}
+.er1 .rithg .shur a{float: right;color: #249AF3; font-size: 18px;display: inline-block;}
+.er1 .rithg .shur input{width: 100%;height: 40px;border-radius: 10px; color: #8493A7; padding-left: 20px; line-height: 40px; font-size: 18px; margin-top: 10px; box-sizing: border-box;}
+.er1 .rithg .shur .aaa1{background-color: #249AF3; color: #FFFFFF;}
+
+
+
+
+
+
+.san1 .left{background: url(../images/c1.jpg); height: 800px; width: 50%;float: left;}
+
+.san1 .left h3{font-size: 26px; color: #FFFFFF; padding-top: 20px; padding-left: 20px;}
+.san1 .left .xia {padding: 0 50px; margin-top: 500px;}
+.san1 .left .xia span{font-size: 22px; color: #FFFFFF; display: block; margin-bottom: 30px;}
+.san1 .left .xia p{font-size: 14px; color: #A8ABAD;}
+
+
+.san1 .rithg {width: 50%;float: right; height: 800px; background-color: #FFFFFF;}
+.san1 .rithg .lianjie a{font-size: 18px; color: #249AF3; padding-left: 20px; padding-top: 20px;}
+.san1 .rithg .pic{ width: 70%;margin: 0 auto;margin-top: 200px; text-align: center;}
+.san1 .rithg .pic img{width: 200px; height: 150px;}
+.san1 .rithg .pic  h3{margin:20px; font-size: 28px; }
+.san1 .rithg .pic p{font-size: 16px; color: #9DA3AA;}
+.san1 .rithg .ddd{margin: 0 auto;width: 70%;margin-top: 30px; }
+.san1 .rithg .ddd input{width: 100%;height: 40px; background-color: #249AF3; color: #FFFFFF;font-size: 16px;text-align: center; border-radius: 10px;}
